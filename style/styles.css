@@ -1,10 +1,19 @@
+html[data-mode='light'] {
+  color: black;
+}
+
+html[data-mode='black'] {
+  --text-color: white;
+}
+
+
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  background-color: #f5eaea;
-  color: #333;
+  background-color: #e2dede;
+  color: var(--text-color);
 }
 
 body a {
@@ -94,11 +103,148 @@ h2 {
 
   gap: 10px;
 }
+
 .skill {
   background-color: rgb(247, 236, 236);
   padding: 5px 10px;
   border-radius: 3px;
+  display: inline-block;
+  position: relative;
+  
 }
+
+#paragraph-about-me {
+  margin: 0;
+}
+
+code {
+  background-color: rgba(0,0,0, 0.2);
+  border-radius: 10%;
+  padding: 0.2rem;
+  font-weight: bold;
+}
+
+.animate-border {
+  position: relative;
+  animation: border-animation 1.5s ease infinite;
+}
+
+@keyframes border-animation {
+  0% {
+    outline: 2px solid rgb(169, 140, 140);
+  }
+  33% {
+    outline: 2px solid rgb(151, 142, 142);
+  }
+  66% {
+    outline: 2px solid rgb(82, 76, 76);
+  }
+  100% {
+    outline: 2px solid rgb(97, 84, 84)0000;
+  }
+}
+
 .project {
   margin-bottom: 15px;
+}
+
+.job {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.job ul {
+  margin-left: 1em;
+}
+
+.tooltip {
+  display: none;
+}
+
+.skill:hover .tooltip {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: normal;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  transform: translateY(35px);
+}
+
+.skill:hover .tooltip::before {
+ content: "";
+ position: absolute;
+ top: -10px;
+ left: 50%;
+ border-width: 5px;
+ border-style: solid;
+ border-color: transparent transparent rgba(0, 0, 0, 0.6) transparent;
+}
+
+
+.tooltip .tooltip-text-bottom {
+  margin: 0;
+  padding: 0;
+  border-radius: 1rem;
+  display: none;
+
+}
+
+.tooltip .tooltip-text-bottom:hover {
+  border-radius: 1rem;
+  visibility: visible;
+  
+}
+
+@keyframes rotate-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#pulse-logo {
+  display: inline-block;
+  vertical-align: middle;
+  width: 10px;
+  height: 20px;
+  background-color: green;
+  animation: pulse-logo 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-logo {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+body > header {
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: grey;
+  justify-content: space-between;
+}
+
+.logo {
+  margin-left: 2rem;
+}
+
+.links {
+  margin-right: 20rem
 }
