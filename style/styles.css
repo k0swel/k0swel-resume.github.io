@@ -248,3 +248,10 @@ body > header {
 .links {
   margin-right: 20rem
 }
+
+@media (max-width: 650px) {
+  header {
+    display: flex;
+    flex-direction: column;
+  }
+}
